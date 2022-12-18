@@ -1,18 +1,17 @@
 import React, {Component, useState} from "react";
 import '../styles/App.css';
 
-class App extends Component {
-    constructor(props) {
-		super(props);
-	};
+function App() {
+	const [displayMsg, setDisplayMsg] = useState(false);
 
-    render() {
-    	return(
-    		<div id="main">
-				{ /* Do not remove this main div!! */ }
-    		</div>
-    	);
-    }
+	return (
+		<div id="main">
+			{
+				(displayMsg == false)?(null):(<p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy.</p>)
+			}
+			<button id="click" onClick={()=>setDisplayMsg(true)}>Click me</button>
+		</div>
+	);
 }
 
 
